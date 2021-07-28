@@ -1,0 +1,104 @@
+.portfolio{
+    max-width: 1280px;
+    padding: 0 70px 106px;
+    margin: auto;
+}
+.portfolio__title{
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 20px;
+    color: #8B8B8B;
+    mix-blend-mode: normal;
+    margin-bottom: 50px;
+}
+.portfolio__list{
+    padding: 0;
+    max-width: 1280px;
+}
+.portfolio__item{
+    position: relative;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 19px;
+    border-bottom: 1px solid #424242;
+}
+.portfolio__item:last-child{
+    border-bottom: none;
+}
+.portfolio__item:nth-child(2){
+    margin-top:20px;
+    margin-bottom: 20px;
+}
+.portfolio__link{
+    text-decoration: none;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 50px;
+    letter-spacing: -0.04em;
+    color: #FFFFFF;
+    cursor: pointer;
+    transform: 0.3;
+}
+.portfolio__link:hover{
+    opacity: 0.6;
+}
+.portfolio__link::after {
+    content: "↗";
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 60px;
+    letter-spacing: -0.04em;
+    color: #FFFFFF;
+    display: block; 
+    position: absolute;
+    right: 0;
+    bottom:9px;
+  }
+
+  @media screen and (max-width:768px) {
+    .portfolio{
+        max-width: 768px;
+        padding: 0 50px 71px;
+    }
+    .portfolio__link{
+        font-size: 28px;
+        line-height: 50px;
+    }
+    .portfolio__item{
+        border-bottom: 1px solid #E6E6E6;
+    }
+    .portfolio__link::after{
+        font-size: 28px;
+    }
+  }
+
+  @media screen and (max-width:580px) {
+    .portfolio{
+        padding: 0 14px 59px;
+    }
+      .portfolio__title{
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 40px;
+      }
+      .portfolio__link{
+        font-size: 18px;
+        line-height: 28px;
+      }
+      .portfolio__link::after{
+        font-size: 18px;
+        line-height: 28px;
+        bottom: 19px;
+          
+      }
+
+  }
+
+

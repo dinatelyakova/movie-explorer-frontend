@@ -1,0 +1,103 @@
+.nav-menu{
+    position:fixed;
+    background: rgba(0, 0, 0, .3);
+    top:0;
+    right:0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    transition: visibility 0.5s, opacity 0.3s linear;
+    visibility: hidden;
+    opacity: 0; 
+}
+.nav-menu__list{
+    margin: auto;
+    margin: 0;
+    position: relative;
+    max-width:768px;
+    background: #202020;
+    height: 1024px;
+    padding: 159px 90px 90px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-menu__close-button{
+    position: absolute;
+    background: url('../../images/exit.svg') center no-repeat;
+    width:22px;
+    height: 22px;
+    top:22.4px;
+    right: 22.4px;
+    border:none;
+    transition: 0.3 ease-in-out ;
+}
+.nav-menu__close-button:hover{
+    opacity: 0.7;
+}
+.nav-menu__list-item{
+    margin: auto;
+    width: 340px;
+    list-style-type: none;
+    margin-bottom: 28px;
+    text-align: center;
+    justify-content: center;
+}
+.nav-menu__list-item:hover{
+    opacity: 0.6;
+}
+.nav-menu__list-item:last-child{
+    margin: auto;
+    margin-bottom:0;
+    margin-top:493px;
+    width:100px;
+    height: 32px;
+    background: #313131;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 32px;
+    
+}
+.nav-menu__link{
+    text-decoration: none;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+}
+.nav-menu__link_type_profile{
+    font-size: 14px;
+    line-height: 16px;
+}
+
+@media screen and (max-width:539px) {
+    .nav-menu__list{
+        width:100%;
+        padding: 144px 10px 46px;
+        max-height: 780px;
+    }
+    .nav-menu__close-button{
+        top:13.4px;
+        right: 13.4px;
+    }
+    .nav-menu__list-item{
+        max-width: 300px;
+    }
+    .nav-menu__list-item{
+        margin-bottom: 24px;
+    }
+    .nav-menu__list-item:last-child{
+        margin-top: 420px;
+    }
+}
+.nav-menu_active{
+    visibility: visible;
+    opacity: 1; 
+}
