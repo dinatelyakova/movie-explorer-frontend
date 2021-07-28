@@ -35,6 +35,10 @@
     text-align: left;
 }
 
+.about__info_column_one{
+    margin-right: 30px;
+}
+
 .about__subtitle{
     font-weight: normal;
     font-size: 20px;
@@ -89,6 +93,22 @@
     text-align: center;
     color: #8B8B8B;
 }
+@media  screen and (max-width:1150px){
+    .about{
+        max-width: 1150px;
+    }
+    .about__info{
+        max-width: 440px;
+    }
+}
+@media  screen and (max-width:960px){
+    .about{
+        max-width: 960px;
+    }
+    .about__info{
+        max-width: 370px;
+    }
+}
 
 @media  screen and (max-width:768px) {
     .about{
@@ -121,9 +141,12 @@
     .about__info{
         max-width: 510px;
     }
-    .about__info:first-child{
-        margin-bottom: 16px;
+    
+    .about__info_column_one{
+        margin-bottom: 56px;
+        margin-right: 0;
     }
+    
     .about__subtitle{
         font-size: 18px;
         line-height: 22px;

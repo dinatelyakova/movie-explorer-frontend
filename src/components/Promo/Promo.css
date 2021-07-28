@@ -2,14 +2,13 @@
     display: flex;
     max-width: 1280px;
     justify-content: center;
+    padding: 0 40px 0;
     margin: auto;
-    
 }
 
 .promo__container{
     background: #272727;
-    max-width: 1200px;
-    margin: auto;
+    width:100%;
     margin-top:28px;
 }
 
@@ -31,9 +30,7 @@
 @media screen and (max-width: 768px){
     .promo{
         max-width: 768px;
-    }
-    .promo__container{
-        max-width: 728px;
+        padding: 0 20px 0;
     }
     .promo__title{
         max-width: 680px;
@@ -47,9 +44,9 @@
 @media screen and (max-width: 320px){
     .promo{
         max-width: 320px;
+        padding: 0 14px 0;
     }
     .promo__container{
-        max-width: 292px;
         margin-top: 14px;
     }
     .promo__title{

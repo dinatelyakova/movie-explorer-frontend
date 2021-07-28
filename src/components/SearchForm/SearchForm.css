@@ -25,6 +25,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding-right: 7px;
 }
 .film-search__input{
     width:calc(100% - 87px);
@@ -51,7 +52,6 @@
     cursor: pointer;
     background: none;
     border: none;
-    margin-right: 7px;
 }
 .film-search__button:hover{
     opacity: 0.8;
