@@ -1,0 +1,103 @@
+.movies-nav__list{
+    padding: 0;
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: space-between;
+    align-items: center;
+}
+.movies-nav__list-item{
+    padding: 0%;
+}
+
+.movies-nav__list-item:first-child{
+    margin-right: 20px;
+}
+
+.movies-nav__list-item:nth-child(2){
+    margin-right: 50px;
+}
+
+.movies-nav__link_type_films{
+    text-decoration: none;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: 0.3;
+}
+.movies-nav__link_type_films:hover{
+    opacity: 0.7;
+}
+
+.movies-nav__link_type_saved{
+    text-decoration: none;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: 0.3;
+}
+.movies-nav__link_type_saved:hover{
+    opacity: 0.7;
+}
+
+.movies-nav__list-item:last-child{
+    width: 100px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #313131;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.movies-nav__list-item:last-child:hover{
+    opacity: 0.7;
+}
+.movies-nav__link_type_profile{
+    text-decoration: none;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFFFF;
+}
+
+.movies-nav__menu-button{
+    display: none;
+}
+
+@media  screen and (max-width:768px) {
+    .movies-nav__list{
+        display: none;
+    }
+    .movies-nav__menu-button{
+        display: block;
+        background: url('../../images/menu-icon.svg') no-repeat;
+        width:44px;
+        height: 44px;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        transition: 0.3 ease-in-out;
+    }
+    .movies-nav__menu-button:hover{
+        opacity: 0.6;
+    }
+}
+
+@media  screen and (max-width:400px){
+    .movies-nav__menu-button{
+        width:40px;
+        height: 43px;
+    }
+}
