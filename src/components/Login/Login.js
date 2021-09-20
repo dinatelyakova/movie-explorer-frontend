@@ -1,35 +1,33 @@
 import "./Login.css";
 import { Link } from "react-router-dom";
 import Input from "../Input/Input";
-import { useState } from "react";
+import React from "react";
 import Greeting from "../Greeting/Greeting";
 import Form from "../Form/Form";
+import { useFormWithValidation } from "../../utils/formValidation";
+import Preloader from "../Preloader/Preloader";
 
-function Login() {
-  const [values, setValues] = useState({
-    email: "",
-    password: "",
-  });
-
-  const [isError, setError] = useState(true);
-
-  const handleChangeInput = (evt) => {
-    const { name,  value } = evt.target;
-
-    setValues({
-      ...values,
-      [name]: value,
-    });
-  };
+function Login({ onLogin, isLoading }) {
+  const formWithValidation = useFormWithValidation();
+  const { values, errors, isValid, handleChange } = useFormWithValidation();
+  const loggedIn = false;
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setError(true)
+    onLogin(values);
+    formWithValidation.resetForm();
   };
   return (
     <section className="login">
-      <Greeting text="Рады видеть!" />
-      <Form name="login" buttonText="Войти" onSubmit={handleSubmit}>
+      {isLoading && <Preloader />}
+      <Greeting text="Рады видеть!" loggedIn={loggedIn} />
+      <Form
+        auth
+        name="login"
+        buttonText="Войти"
+        onSubmit={handleSubmit}
+        isDisabledButton={!isValid}
+      >
         <Input
           auth
           label="E-mail"
@@ -37,11 +35,13 @@ function Login() {
           type="email"
           name="email"
           id="login-auth"
-          onChange={handleChangeInput}
+          onChange={handleChange}
           value={values.email || ""}
           required
         />
-        <span className="login__input-error login__input-error_type_email">Некорректный email</span>
+        <span className="login__input-error login__input-error_type_email">
+          {errors.email}
+        </span>
         <Input
           auth
           label="Пароль"
@@ -49,21 +49,20 @@ function Login() {
           type="password"
           name="password"
           id="password-auth"
-          minLength="6"
-          onChange={handleChangeInput}
+          minLength="8"
+          onChange={handleChange}
           value={values.password || ""}
           required
         />
-        <span className="login__input-error  login__input-error_type_password">Некорректный пароль</span>
-        <span className={`login__submit-error ${isError ? "login__submit-error_active" : ""}`}>
-        Вы ввели неправильный логин или пароль
+        <span className="login__input-error  login__input-error_type_password">
+          {errors.password}
         </span>
       </Form>
 
       <p className="redirect">
-        Ещё не зарегистрированы? {" "}
+        Ещё не зарегистрированы?{" "}
         <Link className="redirect__link" to="/signup">
-          Регистрация {" "}
+          Регистрация{" "}
         </Link>
       </p>
     </section>

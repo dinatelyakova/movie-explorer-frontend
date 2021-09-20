@@ -16,7 +16,8 @@ function Input({
   minLength,
   maxLength,
   onChange,
-  defaultValue
+  disabled,
+  autoComplete
 }) {
   return (
     <>
@@ -52,7 +53,11 @@ function Input({
             value={value}
             placeholder={placeholder}
             id={id}
+            minLength={minLength}
+            maxLength={maxLength}
             error={error}
+            onChange={onChange}
+            autoComplete={autoComplete}
             required
           ></input>
         </>
@@ -73,7 +78,7 @@ function Input({
             id={id}
             error={error}
             onChange={onChange}
-            defaultValue={defaultValue}
+            disabled={disabled}
           ></input>
         </div>
       )}
