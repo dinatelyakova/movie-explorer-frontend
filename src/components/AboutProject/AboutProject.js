@@ -2,7 +2,7 @@ import "./AboutProject.css";
 
 function AboutProject() {
   return (
-    <section className="about">
+    <section className="about" id="about">
       <h2 className="about__title">О проекте</h2>
       <div className="about__container-info">
         <div className="about__info about__info_column_one">
@@ -22,24 +22,24 @@ function AboutProject() {
       </div>
       <table className="about__table">
         <thead>
-        <tr className="about__table-titles">
-          <th className="about__table_name about__table_name_backend">
-            1 неделя
-          </th>
-          <th className="about__table_name about__table_name_frontend">
-            4 недели
-          </th>
-        </tr>
+          <tr className="about__table-titles">
+            <th className="about__table_name about__table_name_backend">
+              1 неделя
+            </th>
+            <th className="about__table_name about__table_name_frontend">
+              4 недели
+            </th>
+          </tr>
         </thead>
         <tbody>
-        <tr className="about__table-texts">
-          <td className="about__table_text about__table_text_backend">
-            backend
-          </td>
-          <td className="about__table_text about__table_text_frontend">
-            frontend
-          </td>
-        </tr>
+          <tr className="about__table-texts">
+            <td className="about__table_text about__table_text_backend">
+              backend
+            </td>
+            <td className="about__table_text about__table_text_frontend">
+              frontend
+            </td>
+          </tr>
         </tbody>
       </table>
     </section>

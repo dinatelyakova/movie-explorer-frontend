@@ -1,10 +1,15 @@
 import "./MoreButton.css";
 
-function MoreButton({ moreButton }) {
+function MoreButton({ moreButton, onClickMoreButton }) {
   return (
     <section className="more">
       {moreButton && (
-        <button type="button" className="more__button" name="more">
+        <button
+          type="button"
+          className="more__button"
+          onClick={onClickMoreButton}
+          name="more"
+        >
           Ещё
         </button>
       )}

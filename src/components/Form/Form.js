@@ -1,23 +1,35 @@
 import "./Form.css";
 
 function Form({
-    name,
-    children,
-    buttonText,
-    buttonClassName,
-    classNameForm
-}){
-
-    return(
-        <form className={`form ${classNameForm}`} name={name} noValidate>
-            {children}
-        
-        <button className={`form__submit ${buttonClassName}`} type="submit">
-            {buttonText}
+  name,
+  children,
+  buttonText,
+  buttonClassName,
+  classNameForm,
+  isDisabledButton,
+  onSubmit,
+  auth,
+}) {
+  return (
+    <form
+      className={`form ${classNameForm}`}
+      name={name}
+      onSubmit={onSubmit}
+      noValidate
+    >
+      {children}
+      {auth && (
+        <button
+          className={`form__submit ${buttonClassName} ${
+            isDisabledButton ? "form__submit_disabled" : ""
+          } `}
+          type="submit"
+        >
+          {buttonText}
         </button>
-        
-        </form>
-    )
+      )}
+    </form>
+  );
 }
 
 export default Form;

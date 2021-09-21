@@ -1,12 +1,12 @@
 .page{
     background: #202020;
     font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
-    align-items: center;
+    align-items: center; 
     justify-content: center;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     padding:0;
-    margin:0 auto;
+    margin:auto;
 }
 
 

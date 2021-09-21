@@ -4,29 +4,37 @@
     width:308px;
     margin: auto;
     margin-bottom: 30px;
-
+    padding: 0%;
+    list-style-type: none;
 }
 
 .navtab__button{
+    display: flex;
     width:96px;
     height: 36px;
     background: #303030;
     border-radius: 10px;
     border: none;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    justify-content: center;
+    align-items: center;
+}
+
+.navtab__button:hover{
+    background: #555555;
+}
+
+.navtab__button_type_icon{
+    text-decoration: none;
     font-family: Inter;
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
     line-height: 16px;
-    letter-spacing: 0px;
-    text-align: center;
+    letter-spacing: 0;
     color: #FFFFFF;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.navtab__button:hover{
-    background: #555555;
 }
 
 @media screen and (max-width: 320px){

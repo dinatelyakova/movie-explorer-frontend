@@ -3,38 +3,36 @@ import Greeting from "../Greeting/Greeting";
 import Form from "../Form/Form";
 import Input from "../Input/Input";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import React from "react";
+import { useFormWithValidation } from "../../utils/formValidation";
+import Preloader from "../Preloader/Preloader";
 
-function Register({ name, email, password }) {
-  const [values, setValues] = useState({
-    name: "",
-    email: "",
-    password: "",
-  });
+function Register({ onRegister, isLoading }) {
+  const { values, errors, isValid, handleChange, resetForm } =
+    useFormWithValidation();
 
-  const [isError, setError] = useState(true);
-
-  const handleChangeInput = (evt) => {
-    const { name, value } = evt.target;
-
-    setValues({
-      ...values,
-      [name]: value,
-    });
-  };
+  React.useEffect(() => {
+    resetForm();
+  }, [resetForm]);
+  const loggedIn = false;
+  const formWithValidation = useFormWithValidation();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setError(true);
+    onRegister(values);
+    formWithValidation.resetForm();
   };
 
   return (
     <section className="register">
-      <Greeting text="Добро пожаловать!" />
+      {isLoading && <Preloader />}
+      <Greeting text="Добро пожаловать!" loggedIn={loggedIn} />
       <Form
+        auth
         name="register"
         buttonText="Зарегистрироваться"
         buttonClassName="form__submit_type_register"
+        isDisabledButton={!isValid}
         onSubmit={handleSubmit}
       >
         <Input
@@ -43,13 +41,15 @@ function Register({ name, email, password }) {
           name="name"
           classNameInput="register__input_type_name"
           type="text"
-          value={name || ""}
-          id="register-name"
-          onChange={handleChangeInput}
+          value={values.name || ""}
+          minLength="2"
+          maxLength="30"
+          onChange={handleChange}
+          autoComplete="off"
           required
         />
         <span className="register__input-error  register__input-error_type_name">
-          Некорректная длина имени
+          {errors.name}
         </span>
         <Input
           register
@@ -57,13 +57,13 @@ function Register({ name, email, password }) {
           name="email"
           classNameInput="register__input_type_email"
           type="email"
-          value={email || ""}
-          id="register-email"
-          onChange={handleChangeInput}
+          value={values.email || ""}
+          onChange={handleChange}
+          autoComplete="off"
           required
         />
         <span className="register__input-error  register__input-error_type_email">
-          Некорректный email
+          {errors.email}
         </span>
         <Input
           register
@@ -71,26 +71,19 @@ function Register({ name, email, password }) {
           name="password"
           classNameInput="register__input_type_password"
           type="password"
-          value={password || ""}
-          id="register-password"
-          onChange={handleChangeInput}
+          minLength="8"
+          value={values.password || ""}
+          onChange={handleChange}
+          autoComplete="off"
           required
         ></Input>
         <span className="register__input-error  register__input-error_type_password">
-          Некорректный пароль
-        </span>
-        <span
-          className={`register__error-submit ${
-            isError ? "register__error-submit_active" : ""
-          }`}
-        >
-          При регистрации пользователя произошла ошибка
+          {errors.password}
         </span>
       </Form>
       <p className="redirect">
         Уже зарегистрированы?{" "}
         <Link className="redirect__link" to="/signin">
-          {" "}
           Войти
         </Link>
       </p>

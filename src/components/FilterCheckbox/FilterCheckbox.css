@@ -48,7 +48,8 @@
     -webkit-transform: translateX(16px);
     -ms-transform: translateX(16px);
     transform: translateX(16px);
-    background-color:  #2BE080;;
+    background-color:  #2BE080;
+    
 }
 
 .filter__label-text{

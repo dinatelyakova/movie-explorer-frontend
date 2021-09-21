@@ -26,6 +26,13 @@
     margin-top:134px;
 }
 
+.form__submit_disabled{
+    cursor: none;
+    pointer-events: none;
+    background-color: grey;
+    opacity: 0.3;
+}
+
 
 @media screen and (max-width:500px){
     .form{

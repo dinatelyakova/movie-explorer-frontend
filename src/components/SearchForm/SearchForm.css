@@ -10,6 +10,7 @@
     opacity: 0.2;
 }
 .film-search__form{
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -56,6 +57,18 @@
 .film-search__button:hover{
     opacity: 0.8;
 }
+.film-search__error{
+    position: absolute;
+    top:40px;
+    left:0;
+    right: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 12px;
+    margin-top: 20px;
+    color: #ee3465;
+    padding: 0 0 0 10px;
+}
 
   @media screen and (max-width: 768px){
     .film-search{
@@ -72,6 +85,10 @@
     }
     .film-search__container{
         margin-bottom: 38px;
+    }
+    .film-search__error{
+        font-size: 11px;
+        line-height: 14px
     }
     
   }

@@ -1,21 +1,27 @@
 import "./MoviesCardList.css";
-import "../MoviesCard/MoviesCard";
 import MoviesCard from "../MoviesCard/MoviesCard";
 
-
-function MoviesCardList({cards, isSavedMovies}){
-    return(
-        <section className="movies-list">
-                {cards.map((card) => (
-                    <MoviesCard
-                      key={card.id}
-                      card={card}
-                      isSavedMovies={isSavedMovies}
-                    />
-                  ))}
-      
-        </section>
-    )
+function MoviesCardList({
+  cards,
+  isSavedMovie,
+  onButtonCardClick,
+  savedCards,
+}) {
+  return (
+    <>
+      <section className="movies-list">
+        {cards.map((card) => (
+          <MoviesCard
+            key={card.id || card.movieId}
+            card={card}
+            savedCards={savedCards}
+            isSavedMovie={isSavedMovie}
+            onButtonCardClick={onButtonCardClick}
+          />
+        ))}
+      </section>
+    </>
+  );
 }
 
 export default MoviesCardList;

@@ -2,23 +2,28 @@ import "./NavTab.css";
 
 function NavTab() {
   return (
-    <div className="navtab__box-icons">
-      <button
-        type="button"
-        className="navtab__button navtab__button_name_about"
+    <ul className="navtab__box-icons">
+      <li className="navtab__button">
+      <a href="#about"
+        className="navtab__button_type_icon"
       >
         О проекте
-      </button>
-      <button type="button" className="navtab__button navtab__button_name_tech">
+      </a>
+      </li>
+      <li className="navtab__button">
+      <a href="#techs" className="navtab__button_type_icon">
         Технологии
-      </button>
-      <button
-        type="button"
-        className="navtab__button navtab__button_name_student"
+      </a>
+      </li>
+      <li className="navtab__button">
+      <a
+        href="#about-me"
+        className="navtab__button_type_icon"
       >
         Студент
-      </button>
-    </div>
+      </a>
+      </li>
+    </ul>
   );
 }
 
