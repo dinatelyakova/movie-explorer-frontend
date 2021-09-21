@@ -59,6 +59,8 @@ function Movies({
     setCheckboxOn(!isCheckboxOn);
   };
 
+  const cardsVisible = cards.length > 0;
+
   return (
     <>
       <Header loggedIn={true} onOpenMenu={onOpenMenu} />
@@ -69,7 +71,7 @@ function Movies({
           isOn={isCheckboxOn}
         />
         {isLoading && <Preloader />}
-        {!isLoading && loadingError === "" && (
+        {cardsVisible && (
           <MoviesCardList
             isSavedMovie={isSavedMovie}
             cards={isCheckboxOn ? utils.filterShortMovies(cards) : movies}
@@ -77,9 +79,7 @@ function Movies({
           />
         )}
 
-        {!isLoading && loadingError !== "" && (
-          <p className="movies__error">{loadingError}</p>
-        )}
+        {!cardsVisible && <p className="movies__error">{loadingError}</p>}
       </section>
       {countFilms < cards.length && (
         <MoreButton moreButton={true} onClickMoreButton={onClickMoreButton} />

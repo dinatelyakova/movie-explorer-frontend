@@ -239,7 +239,6 @@ function App() {
     isSaved ? handleDeleteMovie(movie) : handleAddMovie(movie);
   };
 
-
   const handleAddMovie = (movie) => {
     const token = localStorage.getItem("token");
     mainApi
