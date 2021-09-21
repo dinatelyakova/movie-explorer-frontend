@@ -4,8 +4,7 @@ export const durationForm = (card) => {
   return `${hour > 0 ? `${hour}ч ` : ""}${minute}м`;
 };
 
-
- export const getCountMovie = (windowSize) => {
+export const getCountMovie = (windowSize) => {
   if (windowSize >= 1280) {
     return { first: 12, extra: 3 };
   }
@@ -15,29 +14,20 @@ export const durationForm = (card) => {
   return { first: 5, extra: 2 };
 };
 
- export const filterShortMovies = (movies) =>
-    movies.filter((item) => item.duration < SHORT_M0VIES_DURATION);
+export const filterShortMovies = (movies) =>
+  movies.filter((item) => item.duration < SHORT_M0VIES_DURATION);
 
-    export const searchFilter = (data, query) => {
-      if (query) {
-        const regex = new RegExp(query, "gi");
-        return data.filter(
-          (item) => regex.test(item.nameRU) || regex.test(item.nameEN)
-        );
-      }
-      return [];
-    };
-
+export const searchFilter = (data, query) => {
+  if (query) {
+    const regex = new RegExp(query, "gi");
+    return data.filter(
+      (item) => regex.test(item.nameRU) || regex.test(item.nameEN)
+    );
+  }
+  return [];
+};
 
 export const SHORT_M0VIES_DURATION = 40;
-
-// export const findSavedMovies = (allMovies, savedMovies) => {
-//   savedMovies.forEach((savedMovie) => {
-//     const movie = allMovies.find((card) => card.nameRU === savedMovie.nameRU);
-//     movie.isSaved = true;
-//   });
-//   return allMovies;
-// };
 
 export const getUrlImage = (card) => {
   if (card.image && card.image.url)

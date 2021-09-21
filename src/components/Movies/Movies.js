@@ -25,7 +25,6 @@ function Movies({
   const [extraRow, setExtraRow] = React.useState(3);
   const [movies, setMovies] = React.useState([]);
 
-
   const renderExtraRow = () => {
     const count = Math.min(cards.length, countFilms + extraRow);
     const extraMovies = cards.slice(countFilms, count);
@@ -59,8 +58,6 @@ function Movies({
   const handleToogleCheckbox = () => {
     setCheckboxOn(!isCheckboxOn);
   };
-
- 
 
   return (
     <>

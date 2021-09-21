@@ -65,15 +65,15 @@ function Profile({
             label="Почта"
             type="email"
             name="email"
-            value={currentUser.email || ""}
+            value={values.email || ""}
             autoComplete="off"
-            disabled
+            onChange={handleChange}
             required
           ></Input>
           <button
             type="submit"
             className={
-              isValid && values.name !== currentUser.name
+              isValid && (values.name !== currentUser.name || values.email !== currentUser.email)
                 ? "profile__link-edit profile__link-edit_active"
                 : "profile__link-edit_disabled"
             }
